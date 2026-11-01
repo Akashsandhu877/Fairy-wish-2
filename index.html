@@ -1,13 +1,15 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ur">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday Fairy</title>
+<title>Fairy Ke Liye 💗</title>
 
 <style>
-*{box-sizing:border-box}
+*{
+ box-sizing:border-box;
+}
 body{
  margin:0;
  font-family:Arial,sans-serif;
@@ -19,23 +21,33 @@ body{
 .page{
  display:none;
  min-height:100vh;
- padding:30px 18px;
+ padding:25px 15px;
  align-items:center;
  justify-content:center;
  flex-direction:column;
 }
-.page.active{display:flex}
+.page.active{
+ display:flex;
+}
 .card{
- background:#ffffffd9;
+ background:#ffffffdf;
  padding:30px 20px;
  border-radius:22px;
  max-width:480px;
  width:100%;
  box-shadow:0 8px 25px #9875a522;
 }
-h1{color:#d65c99;font-size:35px}
-h2{color:#bd68a1}
-p{line-height:1.8}
+h1{
+ color:#d65c99;
+ font-size:34px;
+}
+h2{
+ color:#bd68a1;
+}
+p{
+ line-height:2;
+ font-size:17px;
+}
 button{
  background:linear-gradient(120deg,#f48fb1,#b39ddb);
  color:white;
@@ -46,7 +58,10 @@ button{
  margin:10px;
  cursor:pointer;
 }
-.emoji{font-size:65px;margin:15px}
+.emoji{
+ font-size:65px;
+ margin:15px;
+}
 .heart{
  position:fixed;
  bottom:-30px;
@@ -54,47 +69,85 @@ button{
  pointer-events:none;
 }
 @keyframes rise{
- to{transform:translateY(-110vh);opacity:0}
+ to{
+  transform:translateY(-110vh);
+  opacity:0;
+ }
 }
 </style>
 </head>
 
 <body>
 
+<!-- Pehla Safha -->
 <div class="page active" id="page1">
  <div class="card">
   <div class="emoji">🎂</div>
-  <h1>Happy Birthday, Fairy!</h1>
-  <p>Today is your special day. Wishing you lots of happiness, smiles and beautiful moments.</p>
-  <button onclick="nextPage(2)">Next Surprise 💗</button>
+  <h1>Salgirah Mubarak Fairy! 💗</h1>
+  <p>
+   Aaj ka din bohat khaas hai,
+   kyun ke aaj tumhara din hai. 🌸
+  </p>
+  <p>
+   Allah tumhari zindagi ko khushiyon
+   aur kamyabiyon se bhar de.
+  </p>
+  <button onclick="nextPage(2)">
+   Agla Tohfa Dekho 💗
+  </button>
  </div>
 </div>
 
+<!-- Doosra Safha -->
 <div class="page" id="page2">
  <div class="card">
   <div class="emoji">🌸</div>
-  <h2>A Small Birthday Wish</h2>
-  <p>May your life always be filled with happiness, success and peace.</p>
-  <p>Keep smiling, keep shining and never stop believing in yourself.</p>
-  <button onclick="nextPage(3)">One Last Message ✨</button>
+  <h2>Ek Chhoti Si Dua</h2>
+  <p>
+   Dua hai ke tum hamesha muskurati raho,
+   tumhari har pareshani door ho jaye.
+  </p>
+  <p>
+   Tumhare saare achhe khwab poore hon
+   aur zindagi mein hamesha sukoon rahe.
+  </p>
+  <p>
+   Apni pyari si muskurahat kabhi mat khona. 😊
+  </p>
+  <button onclick="nextPage(3)">
+   Aakhri Paighaam 💌
+  </button>
  </div>
 </div>
 
+<!-- Teesra Safha -->
 <div class="page" id="page3">
  <div class="card">
   <div class="emoji">💖</div>
-  <h1>Stay Happy, Fairy!</h1>
-  <p>May all your dreams come true and may every new day bring something beautiful into your life.</p>
-  <h2>Happy Birthday Once Again! 🎉</h2>
-  <p>Best wishes always! 🌷</p>
-  <button onclick="nextPage(1)">Read Again ↻</button>
+  <h1>Hamesha Khush Raho Fairy!</h1>
+  <p>
+   Zindagi ka har naya din tumhare liye
+   khushiyan lekar aaye.
+  </p>
+  <p>
+   Har mushkil aasaan ho,
+   har dua qabool ho
+   aur har din khoobsurat ho.
+  </p>
+  <h2>Salgirah Bohat Bohat Mubarak! 🎉</h2>
+  <p>
+   Hamesha hansti raho aur khush raho. 🌷
+  </p>
+  <button onclick="nextPage(1)">
+   Dobara Dekho ↻
+  </button>
  </div>
 </div>
 
 <script>
 function nextPage(number){
- document.querySelectorAll('.page').forEach(p=>{
-  p.classList.remove('active');
+ document.querySelectorAll('.page').forEach(page=>{
+  page.classList.remove('active');
  });
  document.getElementById('page'+number).classList.add('active');
  window.scrollTo(0,0);
