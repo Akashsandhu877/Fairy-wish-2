@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Fairy</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;
+ font-family:Arial,sans-serif;
+ background:linear-gradient(135deg,#fce4ec,#eee5ff);
+ color:#684b70;
+ text-align:center;
+ min-height:100vh;
+}
+.page{
+ display:none;
+ min-height:100vh;
+ padding:30px 18px;
+ align-items:center;
+ justify-content:center;
+ flex-direction:column;
+}
+.page.active{display:flex}
+.card{
+ background:#ffffffd9;
+ padding:30px 20px;
+ border-radius:22px;
+ max-width:480px;
+ width:100%;
+ box-shadow:0 8px 25px #9875a522;
+}
+h1{color:#d65c99;font-size:35px}
+h2{color:#bd68a1}
+p{line-height:1.8}
+button{
+ background:linear-gradient(120deg,#f48fb1,#b39ddb);
+ color:white;
+ border:0;
+ border-radius:25px;
+ padding:13px 24px;
+ font-size:16px;
+ margin:10px;
+ cursor:pointer;
+}
+.emoji{font-size:65px;margin:15px}
+.heart{
+ position:fixed;
+ bottom:-30px;
+ animation:rise 6s linear forwards;
+ pointer-events:none;
+}
+@keyframes rise{
+ to{transform:translateY(-110vh);opacity:0}
+}
+</style>
+</head>
+
+<body>
+
+<div class="page active" id="page1">
+ <div class="card">
+  <div class="emoji">🎂</div>
+  <h1>Happy Birthday, Fairy!</h1>
+  <p>Today is your special day. Wishing you lots of happiness, smiles and beautiful moments.</p>
+  <button onclick="nextPage(2)">Next Surprise 💗</button>
+ </div>
+</div>
+
+<div class="page" id="page2">
+ <div class="card">
+  <div class="emoji">🌸</div>
+  <h2>A Small Birthday Wish</h2>
+  <p>May your life always be filled with happiness, success and peace.</p>
+  <p>Keep smiling, keep shining and never stop believing in yourself.</p>
+  <button onclick="nextPage(3)">One Last Message ✨</button>
+ </div>
+</div>
+
+<div class="page" id="page3">
+ <div class="card">
+  <div class="emoji">💖</div>
+  <h1>Stay Happy, Fairy!</h1>
+  <p>May all your dreams come true and may every new day bring something beautiful into your life.</p>
+  <h2>Happy Birthday Once Again! 🎉</h2>
+  <p>Best wishes always! 🌷</p>
+  <button onclick="nextPage(1)">Read Again ↻</button>
+ </div>
+</div>
+
+<script>
+function nextPage(number){
+ document.querySelectorAll('.page').forEach(p=>{
+  p.classList.remove('active');
+ });
+ document.getElementById('page'+number).classList.add('active');
+ window.scrollTo(0,0);
+}
+
+setInterval(()=>{
+ const heart=document.createElement('div');
+ heart.className='heart';
+ heart.textContent=['💗','💕','✨','🌸'][Math.floor(Math.random()*4)];
+ heart.style.left=Math.random()*100+'vw';
+ heart.style.fontSize=(15+Math.random()*20)+'px';
+ document.body.appendChild(heart);
+ setTimeout(()=>heart.remove(),6000);
+},800);
+</script>
+
+</body>
+</html>
